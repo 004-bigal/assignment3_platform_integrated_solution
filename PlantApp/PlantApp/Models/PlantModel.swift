@@ -7,13 +7,16 @@
 
 import Foundation
 
+// this is the plant model, that represents a single plant
 struct Plant: Identifiable, Equatable {
+    // variables, including ID all the way to name, location and when it was last watered
     let id: UUID
     var plantName: String
     var plantLocation: String
     var wateringInterval: Int
     var lastWatered: Date?
 
+    // initialiser for each variable
     init(
         id: UUID = UUID(),
         name: String,
@@ -28,6 +31,8 @@ struct Plant: Identifiable, Equatable {
         self.lastWatered = lastWatered
     }
 
+    // computed needsWater variable
+    // answers whether the plant should be watered today or not
     var needsWater: Bool {
         guard let last = lastWatered else { return true }
         let days = Calendar.current.dateComponents(
