@@ -11,7 +11,7 @@ import Foundation
 import Observation
 
 @Observable
-class AllPlantsViewModel {
+class AllThePlantsViewModel {
     let repository: PlantRepo
 
     var plants: [PlantModel] = []
