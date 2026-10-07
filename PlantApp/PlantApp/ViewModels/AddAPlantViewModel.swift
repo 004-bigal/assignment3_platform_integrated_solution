@@ -18,10 +18,14 @@ class AddAPlantViewModel {
     var errorMessage: String?
     var didSave = false
 
+    // initialiser
     init(repository: PlantRepo = CoreRepo()) {
         self.addUseCase = AddPlantUseCase(repository: repository)
     }
 
+    // this takes whatever the user typed into the Add Plant form
+    // and hands it to the use case
+    // it then updates the state based on whether it worked
     func save() async {
         do {
             try await addUseCase.execute(
