@@ -7,11 +7,14 @@
 
 import Foundation
 
+// this is the watering log model
+// this stores a watering log for a plant
 struct WateringLog: Identifiable, Equatable {
     let id: UUID
     let plantID: UUID
     let wateredAt: Date
 
+    // initialiser
     init(id: UUID = UUID(), plantID: UUID, wateredAt: Date = .now) {
         self.id = id
         self.plantID = plantID
