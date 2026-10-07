@@ -8,8 +8,8 @@
 import Foundation
 import Observation
 
-/// Backs the "Needs Water" screen. Loads plants needing water
-/// and handles the water action.
+// This ViewModel handles the "Needs Water" screen
+// Loads plants needing water and handles the water action
 @Observable
 class TodayViewModel {
     let fetchUseCase: FetchThePlantsNeedingWaterUseCase
@@ -18,11 +18,13 @@ class TodayViewModel {
     var plants: [PlantModel] = []
     var errorMessage: String?
 
+    // initialiser
     init(repository: PlantRepo = CoreRepo()) {
         self.fetchUseCase = FetchThePlantsNeedingWaterUseCase(repository: repository)
         self.waterUseCase = WaterPlantUseCase(repository: repository)
     }
 
+    // fetches plants needing water
     func load() async {
         do {
             plants = try await fetchUseCase.execute()
@@ -34,6 +36,7 @@ class TodayViewModel {
         }
     }
 
+    // records a watering then reloads the list
     func water(_ plant: PlantModel) async {
         do {
             try await waterUseCase.execute(plantID: plant.id)
