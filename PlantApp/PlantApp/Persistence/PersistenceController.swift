@@ -8,12 +8,14 @@
 import CoreData
 import Foundation
 
+// this file holds the data core container
 class PersistenceController {
     static let shared = PersistenceController()
     static let appGroupID = "group.com.alikorgun.plantapp"
 
     let container: NSPersistentContainer
 
+    // this code creates the core data stack
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "PlantApp")
 
@@ -36,6 +38,7 @@ class PersistenceController {
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
 
+    // converts core data entity plant into a domain plant level entity
     func plant(from entity: PlantEntity) -> PlantModel {
         PlantModel(
             id: entity.id ?? UUID(),
@@ -46,6 +49,7 @@ class PersistenceController {
         )
     }
 
+    // converts a core data WateringLogEntity into a domain level entity
     func wateringLog(from entity: WateringLogEntity) -> WateringLogModel? {
         guard let plantID = entity.plant?.id,
               let wateredAt = entity.wateredAt,
