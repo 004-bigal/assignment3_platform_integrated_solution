@@ -7,6 +7,8 @@
 
 import Foundation
 
+// This code returns all plants that need watering today
+// it is ordered alphabetically by name
 struct FetchThePlantsNeedingWaterUseCase {
     let repository: PlantRepo
 
