@@ -40,11 +40,6 @@
 			path = PlantAppTests;
 			sourceTree = "<group>";
 		};
-		A900E1D7307602DB0009B069 /* PlantAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PlantAppUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +72,6 @@
 			children = (
 				A900E1BF307602DA0009B069 /* PlantApp */,
 				A900E1CD307602DB0009B069 /* PlantAppTests */,
-				A900E1D7307602DB0009B069 /* PlantAppUITests */,
 				A900E1BE307602DA0009B069 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,9 +146,6 @@
 			);
 			dependencies = (
 				A900E1D6307602DB0009B069 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A900E1D7307602DB0009B069 /* PlantAppUITests */,
 			);
 			name = PlantAppUITests;
 			packageProductDependencies = (
