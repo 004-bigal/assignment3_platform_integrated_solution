@@ -16,11 +16,13 @@ class DetailsOfPlantsViewModel {
     var message: String?
     var wasWatered = false
 
+    // initialiser
     init(plant: PlantModel, repository: PlantRepo = CoreRepo()) {
         self.plant = plant
         self.waterUseCase = WaterPlantUseCase(repository: repository)
     }
 
+    // records that a plant has been watered and updatess the screen accordingly
     func water() async {
         do {
             try await waterUseCase.execute(plantID: plant.id)
