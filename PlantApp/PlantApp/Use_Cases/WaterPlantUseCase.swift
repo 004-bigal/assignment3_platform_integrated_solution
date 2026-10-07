@@ -8,6 +8,9 @@
 import Foundation
 import WidgetKit
 
+// This code records that a plant has been watered today
+// It enforces the business rule that a plant cannot be watered
+// more than once in the same calendar day
 struct WaterPlantUseCase {
     let repository: PlantRepo
 
