@@ -7,13 +7,16 @@
 
 import Foundation
 
+// this is the file that handles errors for plant collection and watering
 enum ErrorPlant: LocalizedError, Equatable {
+    // error cases
     case thePlantNotFound
     case alreadyWateredToday(plantName: String)
     case invalidWateringInterval
     case emptyPlantName
     case saveFailed
 
+    // all the error switch cases and the messages they deliver when they are triggered
     var errorDescription: String? {
         switch self {
         case .thePlantNotFound:
