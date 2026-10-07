@@ -8,9 +8,11 @@
 import CoreData
 import Foundation
 
+// The core data backed implementation of the PlantRepo
+// Only type in the app that touches the core APIs directly
 class CoreRepo: PlantRepo {
     let persistence: PersistenceController
-
+    // initialiser
     init(persistence: PersistenceController = .shared) {
         self.persistence = persistence
     }
@@ -18,7 +20,8 @@ class CoreRepo: PlantRepo {
     var context: NSManagedObjectContext {
         persistence.container.viewContext
     }
-
+    
+    // The 2 functions below are reads
     func fetchAllPlants() async throws -> [PlantModel] {
         let request = PlantEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "plantName", ascending: true)]
@@ -34,6 +37,9 @@ class CoreRepo: PlantRepo {
         return persistence.plant(from: entity)
     }
 
+    // This function returns plants that need watering today
+    // It predicates filters at the database level and then the domain rule
+    // (`needsWater`) handles per plant intervals
     func fetchPlantsNeedingWater() async throws -> [PlantModel] {
         let request = PlantEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "plantName", ascending: true)]
@@ -50,6 +56,7 @@ class CoreRepo: PlantRepo {
             .filter { $0.needsWater }
     }
 
+    // The 2 functions below are write functions
     func addPlant(_ plant: PlantModel) async throws {
         let entity = PlantEntity(context: context)
         entity.id = plant.id
@@ -78,6 +85,8 @@ class CoreRepo: PlantRepo {
         try save()
     }
 
+    // removes a plant from the database by its ID
+    // throws if the plant does not exist
     func deletePlant(id: UUID) async throws {
         let request = PlantEntity.fetchRequest()
         request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
@@ -89,7 +98,8 @@ class CoreRepo: PlantRepo {
         try save()
     }
 
-    private func save() throws {
+    // thin wrapper function, translates raw errors into domain error
+    func save() throws {
         do {
             try context.save()
         } catch {
