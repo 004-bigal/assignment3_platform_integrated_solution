@@ -8,7 +8,7 @@
 import Foundation
 
 // this is the plant model, that represents a single plant
-struct Plant: Identifiable, Equatable {
+struct PlantModel: Identifiable, Equatable {
     // variables, including ID all the way to name, location and when it was last watered
     let id: UUID
     var plantName: String

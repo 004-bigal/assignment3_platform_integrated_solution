@@ -9,7 +9,7 @@ import Foundation
 
 // this is the watering log model
 // this stores a watering log for a plant
-struct WateringLog: Identifiable, Equatable {
+struct WateringLogModel: Identifiable, Equatable {
     let id: UUID
     let plantID: UUID
     let wateredAt: Date
