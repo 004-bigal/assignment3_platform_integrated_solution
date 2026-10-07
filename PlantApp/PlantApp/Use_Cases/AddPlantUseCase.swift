@@ -8,6 +8,8 @@
 import Foundation
 import WidgetKit
 
+// This code adds a new plant to the collection
+// It validates that the name is not empty and that the interval is at least one day
 struct AddPlantUseCase {
     let repository: PlantRepo
 
