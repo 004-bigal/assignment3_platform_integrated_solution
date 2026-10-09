@@ -94,6 +94,7 @@
 				Persistence/PersistenceController.swift,
 				Persistence/PlantApp.xcdatamodeld,
 				Repositories/CoreRepo.swift,
+				Repositories/FakeRepo.swift,
 				Repositories/PlantRepo.swift,
 			);
 			target = A900E29F3078DEEC0009B069 /* PlantAppWidgetExtension */;
