@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct PlantAppApp: App {
+    
+    let persistence = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
-            TodayView()
+            TabView {
+                TodayView()
+                    .tabItem { Label("Today", systemImage: "drop") }
+                AllThePlantsView()
+                    .tabItem { Label("Plants", systemImage: "leaf") }
+                SettingsView()
+                    .tabItem { Label("Settings", systemImage: "gear") }
+            }
         }
     }
 }
