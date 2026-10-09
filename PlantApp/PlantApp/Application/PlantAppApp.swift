@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// main gateway into the application
 @main
 struct PlantAppApp: App {
     
