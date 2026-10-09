@@ -9,20 +9,26 @@ import WidgetKit
 import SwiftUI
 import Foundation
 
+// the data a widget renders
 struct PlantEntry: TimelineEntry {
     let date: Date
     let plantsNeedingWater: [PlantModel]
 }
 
+// this structure supplies the WidgetKit with a timeline of entries describing the current state of the users
+// plants
 struct PlantProvider: TimelineProvider {
+    // placeholder function
     func placeholder(in context: Context) -> PlantEntry {
         PlantEntry(date: .now, plantsNeedingWater: [])
     }
 
+    // snapshot for transient displays
     func getSnapshot(in context: Context, completion: @escaping (PlantEntry) -> Void) {
         Task { completion(await fetchEntry()) }
     }
 
+    // asks for current entry and schedules the next refresh
     func getTimeline(in context: Context, completion: @escaping (Timeline<PlantEntry>) -> Void) {
         Task {
             let entry = await fetchEntry()
@@ -31,13 +37,15 @@ struct PlantProvider: TimelineProvider {
         }
     }
 
-    private func fetchEntry() async -> PlantEntry {
+    // fetches plants needing water
+    func fetchEntry() async -> PlantEntry {
         let repo = CoreRepo()
         let plants = (try? await repo.fetchPlantsNeedingWater()) ?? []
         return PlantEntry(date: .now, plantsNeedingWater: plants)
     }
 }
 
+// view rendered in the widget, displays a count of plants
 struct PlantAppWidgetEntryView: View {
     var entry: PlantEntry
 
@@ -64,6 +72,7 @@ struct PlantAppWidgetEntryView: View {
     }
 }
 
+// entry point for extension
 @main
 struct PlantAppWidgetBundle: WidgetBundle {
     var body: some Widget {
@@ -71,6 +80,7 @@ struct PlantAppWidgetBundle: WidgetBundle {
     }
 }
 
+// widget config
 struct PlantAppWidget: Widget {
     let kind = "PlantAppWidget"
 
