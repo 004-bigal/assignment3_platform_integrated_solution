@@ -17,7 +17,7 @@ struct SettingsView: View {
                     Toggle("Daily watering reminder", isOn: $notificationsEnabled)
                 }
                 Section("About") {
-                    Text("PlantApp — helping plant-sitters keep every plant alive.")
+                    Text("PlantApp, helping plant sitters to keep every plant alive")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
