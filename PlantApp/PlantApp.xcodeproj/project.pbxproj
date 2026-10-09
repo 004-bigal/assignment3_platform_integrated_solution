@@ -10,6 +10,7 @@
 		A900E2A33078DEEC0009B069 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A900E2A23078DEEC0009B069 /* WidgetKit.framework */; };
 		A900E2A53078DEEC0009B069 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A900E2A43078DEEC0009B069 /* SwiftUI.framework */; };
 		A900E2B03078DEED0009B069 /* PlantAppWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A900E2A03078DEEC0009B069 /* PlantAppWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A900E2D23078EC6B0009B069 /* PlantAppShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A900E2C83078EC6A0009B069 /* PlantAppShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,13 @@
 			remoteGlobalIDString = A900E29F3078DEEC0009B069;
 			remoteInfo = PlantAppWidgetExtension;
 		};
+		A900E2D03078EC6B0009B069 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A900E1B5307602D90009B069 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A900E2C73078EC6A0009B069;
+			remoteInfo = PlantAppShare;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				A900E2D23078EC6B0009B069 /* PlantAppShare.appex in Embed Foundation Extensions */,
 				A900E2B03078DEED0009B069 /* PlantAppWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -58,6 +67,7 @@
 		A900E2A23078DEEC0009B069 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A900E2A43078DEEC0009B069 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		A900E2B63078DF560009B069 /* PlantAppWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantAppWidgetExtension.entitlements; sourceTree = "<group>"; };
+		A900E2C83078EC6A0009B069 /* PlantAppShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlantAppShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +98,13 @@
 			);
 			target = A900E29F3078DEEC0009B069 /* PlantAppWidgetExtension */;
 		};
+		A900E2D63078EC6B0009B069 /* Exceptions for "PlantAppShare" folder in "PlantAppShare" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A900E2C73078EC6A0009B069 /* PlantAppShare */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -111,6 +128,14 @@
 				A900E2B43078DEED0009B069 /* Exceptions for "PlantAppWidget" folder in "PlantAppWidgetExtension" target */,
 			);
 			path = PlantAppWidget;
+			sourceTree = "<group>";
+		};
+		A900E2C93078EC6A0009B069 /* PlantAppShare */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A900E2D63078EC6B0009B069 /* Exceptions for "PlantAppShare" folder in "PlantAppShare" target */,
+			);
+			path = PlantAppShare;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -146,6 +171,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A900E2C53078EC6A0009B069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -156,6 +188,7 @@
 				A900E1BF307602DA0009B069 /* PlantApp */,
 				A900E1CD307602DB0009B069 /* PlantAppTests */,
 				A900E2A63078DEEC0009B069 /* PlantAppWidget */,
+				A900E2C93078EC6A0009B069 /* PlantAppShare */,
 				A900E2A13078DEEC0009B069 /* Frameworks */,
 				A900E1BE307602DA0009B069 /* Products */,
 			);
@@ -168,6 +201,7 @@
 				A900E1CA307602DB0009B069 /* PlantAppTests.xctest */,
 				A900E1D4307602DB0009B069 /* PlantAppUITests.xctest */,
 				A900E2A03078DEEC0009B069 /* PlantAppWidgetExtension.appex */,
+				A900E2C83078EC6A0009B069 /* PlantAppShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +231,7 @@
 			);
 			dependencies = (
 				A900E2AF3078DEED0009B069 /* PBXTargetDependency */,
+				A900E2D13078EC6B0009B069 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A900E1BF307602DA0009B069 /* PlantApp */,
@@ -273,6 +308,28 @@
 			productReference = A900E2A03078DEEC0009B069 /* PlantAppWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		A900E2C73078EC6A0009B069 /* PlantAppShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A900E2D33078EC6B0009B069 /* Build configuration list for PBXNativeTarget "PlantAppShare" */;
+			buildPhases = (
+				A900E2C43078EC6A0009B069 /* Sources */,
+				A900E2C53078EC6A0009B069 /* Frameworks */,
+				A900E2C63078EC6A0009B069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A900E2C93078EC6A0009B069 /* PlantAppShare */,
+			);
+			name = PlantAppShare;
+			packageProductDependencies = (
+			);
+			productName = PlantAppShare;
+			productReference = A900E2C83078EC6A0009B069 /* PlantAppShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -298,6 +355,9 @@
 						CreatedOnToolsVersion = 26.6;
 						LastSwiftMigration = 2660;
 					};
+					A900E2C73078EC6A0009B069 = {
+						CreatedOnToolsVersion = 26.6;
+					};
 				};
 			};
 			buildConfigurationList = A900E1B8307602D90009B069 /* Build configuration list for PBXProject "PlantApp" */;
@@ -318,6 +378,7 @@
 				A900E1C9307602DB0009B069 /* PlantAppTests */,
 				A900E1D3307602DB0009B069 /* PlantAppUITests */,
 				A900E29F3078DEEC0009B069 /* PlantAppWidgetExtension */,
+				A900E2C73078EC6A0009B069 /* PlantAppShare */,
 			);
 		};
 /* End PBXProject section */
@@ -345,6 +406,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A900E29E3078DEEC0009B069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A900E2C63078EC6A0009B069 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -382,6 +450,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A900E2C43078EC6A0009B069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -399,6 +474,11 @@
 			isa = PBXTargetDependency;
 			target = A900E29F3078DEEC0009B069 /* PlantAppWidgetExtension */;
 			targetProxy = A900E2AE3078DEED0009B069 /* PBXContainerItemProxy */;
+		};
+		A900E2D13078EC6B0009B069 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A900E2C73078EC6A0009B069 /* PlantAppShare */;
+			targetProxy = A900E2D03078EC6B0009B069 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -745,6 +825,64 @@
 			};
 			name = Release;
 		};
+		A900E2D43078EC6B0009B069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VR463THJRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlantAppShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlantAppShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alikorgun.plant.2026.PlantAppShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A900E2D53078EC6B0009B069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VR463THJRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlantAppShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlantAppShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alikorgun.plant.2026.PlantAppShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -789,6 +927,15 @@
 			buildConfigurations = (
 				A900E2B23078DEED0009B069 /* Debug */,
 				A900E2B33078DEED0009B069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A900E2D33078EC6B0009B069 /* Build configuration list for PBXNativeTarget "PlantAppShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A900E2D43078EC6B0009B069 /* Debug */,
+				A900E2D53078EC6B0009B069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
