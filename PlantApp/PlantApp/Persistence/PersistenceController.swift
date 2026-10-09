@@ -11,7 +11,7 @@ import Foundation
 // this file holds the data core container
 class PersistenceController {
     static let shared = PersistenceController()
-    static let appGroupID = "group.com.alikorgun.plantapp"
+    static let appGroupID = "group.com.alikorgun.plant2026"
 
     let container: NSPersistentContainer
 
