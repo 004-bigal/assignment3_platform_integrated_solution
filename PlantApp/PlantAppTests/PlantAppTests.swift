@@ -27,6 +27,7 @@ final class UseCaseTests: XCTestCase {
         XCTAssertEqual(repo.waterings.count, 1)
     }
 
+    // this test case deals with the rule that you cannot water the same plant twice in one day
     func testWaterPlant_throwsAlreadyWateredToday_whenWateredTwiceInOneDay() async {
         let repo = FakeRepo()
         let plant = PlantModel(
@@ -49,6 +50,7 @@ final class UseCaseTests: XCTestCase {
         }
     }
 
+    // this test case makes sure that if the user tries to water a plant that doesn't exist, the use case throws // the correct domain error
     func testWaterPlant_throwsPlantNotFound_forUnknownID() async {
         let repo = FakeRepo()
         let useCase = WaterPlantUseCase(repository: repo)
@@ -79,6 +81,7 @@ final class UseCaseTests: XCTestCase {
         }
     }
 
+    // validates that when you give valid input to AddPlantUseCase, a new plant is actually created and saved
     func testAddPlant_savesPlantWithValidInterval() async throws {
         let repo = FakeRepo()
         let useCase = AddPlantUseCase(repository: repo)
