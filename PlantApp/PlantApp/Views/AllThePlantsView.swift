@@ -25,7 +25,7 @@ struct AllThePlantsView: View {
                 Button("Add", systemImage: "plus") { showingAdd = true }
             }
             .sheet(isPresented: $showingAdd) {
-
+                AddAPlantView(onSaved: { Task { await viewModel.load() } })
             }
             .task { await viewModel.load() }
         }
