@@ -43,7 +43,3 @@ struct TodayView: View {
         }
     }
 }
-
-#Preview {
-    TodayView()
-}
