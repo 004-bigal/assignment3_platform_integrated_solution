@@ -14,7 +14,7 @@ struct TodayView: View {
         NavigationStack {
             List {
                 if viewModel.plants.isEmpty {
-                    Text("All plants are watered 🌿")
+                    Text("All of the plants are watered 🌿")
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(viewModel.plants) { plant in

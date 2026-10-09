@@ -14,7 +14,7 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 Section("Notifications") {
-                    Toggle("Daily watering reminder", isOn: $notificationsEnabled)
+                    Toggle("Daily water reminder", isOn: $notificationsEnabled)
                 }
                 Section("About") {
                     Text("PlantApp, helping plant sitters to keep every plant alive")
