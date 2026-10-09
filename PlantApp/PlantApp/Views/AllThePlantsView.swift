@@ -15,7 +15,9 @@ struct AllThePlantsView: View {
         NavigationStack {
             List(viewModel.plants) { plant in
                 NavigationLink(plant.plantName) {
-
+                    DetailsOfThePlantsView(plant: plant, onChanged: {
+                        Task { await viewModel.load() }
+                    })
                 }
             }
             .navigationTitle("All Plants")
@@ -28,8 +30,4 @@ struct AllThePlantsView: View {
             .task { await viewModel.load() }
         }
     }
-}
-
-#Preview {
-    AllThePlantsView()
 }
