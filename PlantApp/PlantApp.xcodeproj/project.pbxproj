@@ -29,9 +29,22 @@
 		A900E1D4307602DB0009B069 /* PlantAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A900E29A3078767B0009B069 /* Exceptions for "PlantApp" folder in "PlantApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Persistence/PlantApp.xcdatamodeld,
+			);
+			target = A900E1BC307602DA0009B069 /* PlantApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A900E1BF307602DA0009B069 /* PlantApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A900E29A3078767B0009B069 /* Exceptions for "PlantApp" folder in "PlantApp" target */,
+			);
 			path = PlantApp;
 			sourceTree = "<group>";
 		};
