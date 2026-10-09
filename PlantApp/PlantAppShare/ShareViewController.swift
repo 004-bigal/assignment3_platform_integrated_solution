@@ -9,6 +9,8 @@ import UIKit
 import Social
 import UniformTypeIdentifiers
 
+// shareviews controller
+// when user shares an image, this controller runs
 class ShareViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
@@ -16,6 +18,7 @@ class ShareViewController: UIViewController {
         handleASharedImage()
     }
 
+    // extracts the first image from shared items and saves it to the App Group container
     func handleASharedImage() {
         guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
             dismiss()
@@ -44,6 +47,7 @@ class ShareViewController: UIViewController {
         dismiss()
     }
 
+    // this function tells iOS that the extension is done and can close the share sheet
     func dismiss() {
         extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
     }
